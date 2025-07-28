@@ -21,12 +21,13 @@ public class TempDomainChecker {
             ObjectMapper mapper = new ObjectMapper();
             InputStream inputStream = getClass().getResourceAsStream("/temporary_emails.json");
 
-            if(inputStream == null) {
+            if (inputStream == null) {
                 System.out.println("\uD83D\uDEA8 JSON file not found!");
             }
 
             if (inputStream != null) {
-                Set<String> domainsFromFile = mapper.readValue(inputStream, new TypeReference<>() {});
+                Set<String> domainsFromFile = mapper.readValue(inputStream, new TypeReference<>() {
+                });
                 for (String domain : domainsFromFile) {
                     tempDomains.add(domain.toLowerCase());
                 }

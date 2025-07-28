@@ -26,7 +26,7 @@ public class EmailValidatorController {
         return ResponseEntity.ok("Email Validator API is working.");
     }
 
-    @GetMapping("/api/email/validate")
+    @GetMapping("/api/v1/validate")
     public ResponseEntity<EmailValidationResponse> validateEmail(@RequestParam String email
             , @RequestHeader(value = "X-RapidAPI-Proxy-Secret", required = false) String proxySecret) {
 
